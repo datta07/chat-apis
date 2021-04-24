@@ -1,0 +1,48 @@
+Databases included:
+	- AuthTable
+		: (userName,password,groupNames)
+	- N * groups
+		: (msgId,message,userName,likes,tagsWith)
+	- MaxId
+		: (lastId)
+	- groupInfo
+		: (groupName,adminId,noOfUsers)
+
+Apis:-
+-------
+addUser:
+	- adds user to database
+	# http://127.0.0.1:5000/addUser?username=datta&password=guru
+
+checkUser:
+	- checks whether userName matchs with password
+	# http://127.0.0.1:5000/checkUser?username=datta&password=guru
+
+createGroup:
+	- creates a group and user becomes admin and automatcally joins the group
+	# http://127.0.0.1:5000/createGroup?groupname=room1&username=datta
+
+joinGroup:
+	- Joins other users into group
+	# http://127.0.0.1:5000/joinGroup?username=datta&group=room1
+
+sendMessage:
+	- if user in group then message sends to all group members
+	- tagswith is a optional as we reply to particular message in whatsapp
+	# http://127.0.0.1:5000/sendMessage?groupname=room1&username=datta&message=where%20are%20you
+
+viewChat:
+	- json that returns full chat data of the group
+	# http://127.0.0.1:5000/viewChat?groupname=room1
+
+giveLike:
+	- give a like to message
+	# http://127.0.0.1:5000/giveLike?groupname=room1&msgid=3
+
+groupInfo:
+	- information about a group
+	# http://127.0.0.1:5000/groupInfo?groupname=room1
+
+userInfo:
+	- information about a user (mainly groups)
+	# http://127.0.0.1:5000/userInfo?username=datta
