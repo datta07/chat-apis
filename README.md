@@ -45,3 +45,10 @@
     - information about a user (mainly groups involved by user)
     - params : ( username )
     - http://localhost:5000/userInfo?username=datta
+
+### For running e2e test run test.py
+    - User should either login or register to use 
+    - chat can be seen by anyone but message can be sent by only users who have joined group
+    - join the group before to send message
+
+
