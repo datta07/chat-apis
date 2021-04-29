@@ -1,3 +1,9 @@
+'''
+- User should either login or register to use 
+- chat can be seen by anyone but message can be sent by only users who have joined group
+- join the group before to send message
+'''
+
 import requests
 
 user=None
@@ -77,7 +83,7 @@ while True:
 		elif (no==2):
 			register()
 	else:
-		ques="\n 1)createGroup\n 2)joinGroup\n 3)viewChat \n 4)viewInfo"+"\n"+("-"*30)+"\nEnter an option: "
+		ques="\n 1)create a Group\n 2)join a Group\n 3)Chat in group \n 4)view Infos"+"\n"+("-"*30)+"\nEnter an option: "
 		ops=int(input(("-"*30)+"\n hi "+user+"\n"+("-"*30)+ques+"\n"))
 		if ops==1:
 			createGroup()
